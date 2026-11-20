@@ -3,11 +3,12 @@
   publish = "dist"
   functions = "netlify/functions"
 
-[build.processing.secrets_scanning]
-  omit_keys = ["VITE_SUPABASE_ANON_KEY", "VITE_SUPABASE_URL", "CATALOG_ACCESS_PASSWORD", "CATALOG_SESSION_SECRET"]
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_URL,VITE_SUPABASE_ANON_KEY"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
 
